@@ -1,12 +1,14 @@
 import time
 
 import allure
+from selenium.webdriver.common.by import By
+
 from base.base_page import BasePage
 from config.links import Links
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import Keys
 
-class SearchMarka(BasePage):                                      # локаторы для логина
+class Search(BasePage):                                      # локаторы для логина
 
     PAGE_URL = Links.DASHBOARD_PAGE
 
@@ -22,7 +24,17 @@ class SearchMarka(BasePage):                                      # локато
     END_PRICE = ("xpath", "/html/body/div[2]/form/p[7]/input")                   # Цена до
     START_MILEAGE = ("xpath", "/html/body/div[2]/form/p[9]/input")               # Пробег от
     END_MILEAGE = ("xpath", "/html/body/div[2]/form/p[10]/input")                # Пробег до
+    NEXT_PAGE = ("xpath", "/html/body/nav/ul/li[3]/a")                           # Кнопка следующая страница
 
+
+    def scrol_down_button(self):                                                     # скролл до след. страницы
+        nest_page = self.driver.find_element(By.XPATH, '/html/body/nav/ul/li[3]/a')
+        self.driver.execute_script("arguments[0].scrollIntoView();", nest_page)
+        time.sleep(1)
+
+    def next_page(self):                                                             # след. страница
+        self.wait.until(EC.element_to_be_clickable(self.NEXT_PAGE)).click()
+        time.sleep(1)
 
     # @allure.step("Click submit button")                         #для алюра
     def click_search_marka(self):                              # нажимает на кнопку
@@ -56,15 +68,15 @@ class SearchMarka(BasePage):                                      # локато
 
     def start_price(self, new_price):  # для смены текста в поле
         self.wait.until(EC.element_to_be_clickable(self.START_PRICE)).send_keys(new_price)  #
-        time.sleep(1)
+        # time.sleep(1)
 
     def end_price(self, new_price):  # для смены текста в поле
         self.wait.until(EC.element_to_be_clickable(self.END_PRICE)).send_keys(new_price)  #
-        time.sleep(1)
+        # time.sleep(1)
 
     def start_mileage(self, new_mileage):  # для смены текста в поле
         self.wait.until(EC.element_to_be_clickable(self.START_MILEAGE)).send_keys(new_mileage)  #
-        time.sleep(1)
+        # time.sleep(1)
 
     def end_mileage(self, new_mileage):  # для смены текста в поле
         self.wait.until(EC.element_to_be_clickable(self.END_MILEAGE)).send_keys(new_mileage)  #
@@ -73,11 +85,15 @@ class SearchMarka(BasePage):                                      # локато
         # @allure.step("Click submit button")                         #для алюра
     def explore_search(self):  # нажимает на кнопку
         self.wait.until(EC.element_to_be_clickable(self.EXPLORE_BUTTON)).click()
-        time.sleep(2)
+        # time.sleep(2)
 
     # @allure.step("Click submit button")                         #для алюра
     def car_card(self):  # нажимает на кнопку
         self.wait.until(EC.element_to_be_clickable(self.CAR_CARD)).click()
-        time.sleep(5)
+        # time.sleep(5)
+
+    # def scrol_card(self):  # нажимает на кнопку
+    #     self.wait.until(EC.(self.CAR_CARD)).execute_script("window.scrollBy(0,500)","")
+    #     time.sleep(1)
 
 

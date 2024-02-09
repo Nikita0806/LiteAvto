@@ -1,3 +1,5 @@
+import time
+
 import allure
 from allure_commons.types import AttachmentType         # для прикрепления файлов разного формата
 from selenium.webdriver.support.ui import WebDriverWait
@@ -14,7 +16,17 @@ class BasePage:                                                     # в нём 
 
     def is_opened(self):                                            # открылась ли страница?
         with allure.step(f"Page {self.PAGE_URL} is opened"):        # для записи в алюр более понятной
-            self.wait.until(EC.url_to_be(self.PAGE_URL))            #
+            self.wait.until(EC.url_to_be(self.PAGE_URL))
+
+    def scrol_down(self):                                                   # скролл вниз
+        with allure.step(f"Scrol {self.PAGE_URL} page"):                    # для записи в алюр более понятной
+            self.driver.execute_script("window.scrollBy(0,500)","")
+            time.sleep(1)
+
+    def scrol_up(self):                                                     # скролл вверх
+        with allure.step(f"Scrol {self.PAGE_URL} page"):                    # для записи в алюр более понятной
+            self.driver.execute_script("window.scrollBy(0,-5000)","")
+            time.sleep(1)
 
     # def make_screenshot(self, screenshot_name):         # для скриншота
     #     allure.attach(                                  # как сохранять его

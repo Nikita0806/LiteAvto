@@ -11,29 +11,23 @@ class TestProfileFeature(BaseTest):             # сам тест
 
     @pytest.mark.login                          # для пайтеста обозначения (маркер)
     def test_change_profile_name(self):         # методы :
-        self.search_marka.open()
-        self.search_marka.is_opened()         # проверка открытия страницы
-        self.search_marka.click_search_marka()    # нажатие кнопки
-        self.search_marka.click_select_marka()
-        self.search_marka.click_search_model()
-        self.search_marka.click_select_model()
-        self.search_marka.click_search_cuzov()
-        self.search_marka.click_select_cuzov()
-        self.search_marka.start_price(f"2{random.randint(10000, 1000000)}")
-        self.search_marka.end_price(f"3{random.randint(10000, 1000000)}")
-        self.search_marka.start_mileage(f"4{random.randint(100, 10000)}")
-        self.search_marka.end_mileage(f"5{random.randint(100, 10000)}")
-        self.search_marka.explore_search()
-        self.search_marka.car_card()
-        # self.search_marka.year_from("2011")
-        # self.login_page.open()                  # открытие страницы
-        # self.login_page.enter_login(self.data.LOGIN)    # ввод логина
-        # self.login_page.enter_password(self.data.PASSWORD)  # ввод пароля
-        # self.login_page.click_submit_button()   # нажатие на кнопку
-        # self.dashboard_page.is_opened()         # проверка открытия страницы
-        # self.dashboard_page.click_my_info_link()    # нажатие кнопки
-        # self.personal_page.is_opened()          # открылась страница проверка
-        # self.personal_page.change_name(f"Test {random.randint(1, 100)}")    # для ввода разных имен
-        # self.personal_page.save_changes()       # сохраняем новое имя
-        # self.personal_page.is_changes_saved()   # проверяем сохраненность
-        # self.personal_page.make_screenshot("Success")   #
+        self.search.open()
+        self.search.is_opened()         # проверка открытия страницы
+        self.search.scrol_down_button()
+        self.search.next_page()
+        self.search.scrol_down()
+        self.search.scrol_up()
+        self.search.click_search_marka()    # нажатие кнопки
+        self.search.click_select_marka()
+        self.search.click_search_model()
+        self.search.click_select_model()
+        self.search.click_search_cuzov()
+        self.search.click_select_cuzov()
+        self.search.start_price(f"26{random.randint(1000, 100000)}")
+        self.search.end_price(f"3{random.randint(10000, 1000000)}")
+        self.search.start_mileage(f"46{random.randint(10, 1000)}")
+        self.search.end_mileage(f"5{random.randint(100, 10000)}")
+        self.search.explore_search()
+        self.search.car_card()
+        self.search.scrol_down()
+
