@@ -9,8 +9,8 @@ class TestProfileFeature(BaseTest):             # сам тест
     # @allure.title("Change profile name")        # для алюра
     # @allure.severity("Critical")                # для алюра
 
-    @pytest.mark.login                          # для пайтеста обозначения (маркер)
-    def test_change_profile_name(self):         # методы :
+    @pytest.mark.search                         # для пайтеста обозначения (маркер)
+    def test_search(self):         # методы :
         self.search.open()
         self.search.is_opened()         # проверка открытия страницы
         self.search.scrol_down_button()

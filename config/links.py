@@ -7,6 +7,7 @@ class Links:                        # ССЫЛКИ
     REGISTRATION_PAGE = F"{HOST}/register"       # ДЛЯ РЕГИСТРАЦИИ ССЫЛКА
     DASHBOARD_PAGE = f"{HOST}/"                  # КАТАЛОГ - ГЛАВНАЯ
     OFFER_PAGE = f"{HOST}/addcar"                # ДОБАВЛЕНИЕ АВТО
+    ADMIN_PAGE = f"{HOST}/admin"                 # АДМИНКА
 
 
     # PERSONAL_PAGE = f"{HOST}/pim/viewPersonalDetails/empNumber/7"    # ДРУГИЕ ССЫЛКИ...

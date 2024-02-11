@@ -9,11 +9,12 @@ class RegistrationPage(BasePage):                                      # лок�
 
     PAGE_URL = Links.REGISTRATION_PAGE                                 #
 
-    USERNAME_FIELD = ("xpath", "/html/body/form/div/p[2]/input")     # локатор - место
-    PASSWORD_FIELD = ("xpath", "/html/body/form/div/p[3]/input")     # локатор
-    REPEAT_PASSWORD_FIELD = ("xpath", "/html/body/form/div/p[4]/input")     # локатор
-    SUBMIT_BUTTON = ("xpath", "/html/body/form/div/button")       # локатор
-    # @allure.step("Enter login")                                 # для алюра
+    USERNAME_FIELD = ("xpath", "/html/body/form/div/p[2]/input")
+    PASSWORD_FIELD = ("xpath", "/html/body/form/div/p[3]/input")
+    REPEAT_PASSWORD_FIELD = ("xpath", "/html/body/form/div/p[4]/input")
+    SUBMIT_BUTTON = ("xpath", "/html/body/form/div/button")
+    EXIT_LOGIN = ("xpath", '//*[@id="mainmenu"]/li[5]/a[2]')
+    # @allure.step("Enter login")
     def enter_login(self, login):                               # принимает логин
         self.wait.until(EC.element_to_be_clickable(self.USERNAME_FIELD)).send_keys(login)
         # time.sleep(2)
@@ -27,4 +28,8 @@ class RegistrationPage(BasePage):                                      # лок�
     # @allure.step("Click submit button")                         #для алюра
     def click_submit_button(self):                              # нажимает на кнопку
         self.wait.until(EC.element_to_be_clickable(self.SUBMIT_BUTTON)).click()
+        time.sleep(2)
+
+    def exit_login(self):                              # нажимает на кнопку
+        self.wait.until(EC.element_to_be_clickable(self.EXIT_LOGIN)).click()
         time.sleep(2)

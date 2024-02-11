@@ -7,6 +7,7 @@ from pages.for_registration.dashboard_registration_page import DashboardRegistra
 from pages.for_search.dashboard_search_page import Search
 from pages.for_offer.dashboard_offer_page import DashboardOfferPage
 from pages.for_offer.offer_page import OfferPage
+from pages.for_admin.admin_page import AdminPage
 # from pages.personal_page import PersonalPage
 
 
@@ -21,6 +22,7 @@ class BaseTest:                             # базовый для наших �
     search: Search
     dashboard_offer_page: DashboardOfferPage
     offer_page: OfferPage
+    admin_page: AdminPage
     # personal_page: PersonalPage             # аннотация
 
     @pytest.fixture(autouse=True)           # autouse=True для всех тестов она применяется
@@ -35,4 +37,5 @@ class BaseTest:                             # базовый для наших �
         request.cls.search = Search(driver)  # объекты страниц
         request.cls.dashboard_offer_page = DashboardOfferPage(driver)  # объекты страниц
         request.cls.offer_page = OfferPage(driver)  # объекты страниц
+        request.cls.admin_page = AdminPage(driver)  # объекты страниц
         # request.cls.personal_page = PersonalPage(driver)    # объекты страниц

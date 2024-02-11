@@ -20,13 +20,13 @@ class OfferPage(BasePage):                                      # локатор
     VIN = ("xpath", '//*[@id="id_vin"]')                                        # VIN
     EQUIPMENT = ("xpath", '//*[@id="id_compl"]')                                # Комплектация
     SEARCH_DATE = ("xpath", '//*[@id="id_data"]')
-    SELECT_DATE = ("xpath", '//*[@id="id_data"]/option[19]')                    # Год выпуска
+    SELECT_DATE = ("xpath", '/html/body/form/div/p[7]/select/option[31]')       # Год выпуска
     PRICE = ("xpath", '//*[@id="id_price"]')                                    # Цена
     MILEAGE = ("xpath", '//*[@id="id_probeg"]')                                 # Пробег
     SEARCH_TRANSMISSION = ("xpath", '//*[@id="id_trans"]')
     SELECT_TRANSMISSION = ("xpath", '//*[@id="id_trans"]/option[2]')            # Трансмиссия
     SEARCH_ENGINE_CAPACITY = ("xpath", '//*[@id="id_obem"]')
-    SELECT_ENGINE_CAPACITY = ("xpath", '//*[@id="id_obem"]/option[21]')         # Объём двигателя
+    SELECT_ENGINE_CAPACITY = ("xpath", '//*[@id="id_obem"]/option[22]')         # Объём двигателя
     SEARCH_ENGINE_TYPE = ("xpath", '//*[@id="id_top"]')
     SELECT_ENGINE_TYPE = ("xpath", '//*[@id="id_top"]/option[2]')               # Тип двигателя
     SEARCH_DRIVE_UNIT = ("xpath", '//*[@id="id_priv"]')
@@ -35,7 +35,7 @@ class OfferPage(BasePage):                                      # локатор
     SELECT_STATE = ("xpath", '//*[@id="id_sost"]/option[2]')                    # Состояние
     HORSEPOWER = ("xpath", '//*[@id="id_ls"]')                                  # Лошадиные силы
     SEARCH_PTS = ("xpath", '//*[@id="id_pts"]')
-    SELECT_PTS = ("xpath", '//*[@id="id_pts"]/option[2]')                       # ПТС
+    SELECT_PTS = ("xpath", '//*[@id="id_pts"]/option[3]')                       # ПТС
     OWNERS = ("xpath", '//*[@id="id_vlad"]')                                    # Владельцы
     SEARCH_ACCOUNTING = ("xpath", '//*[@id="id_uchet"]')
     SELECT_ACCOUNTING = ("xpath", '//*[@id="id_uchet"]/option[2]')              # Учет
@@ -192,17 +192,17 @@ class OfferPage(BasePage):                                      # локатор
 
     def photo_1(self):
         self.driver.find_elements(By.XPATH, '//*[@id="id_photo1"]')[0].send_keys(
-            'C:\\Users\\garpix\\PycharmProjects\\LiteAvto\\photo\\photo_2023-08-24_12-22-24.jpg')
+            'C:\\Users\\garpix\\PycharmProjects\\LiteAvto\\photo\\1.fcIFDra40SszpxMuc083gQms0y27r1Mjc6rTKbWn2SGz.webp')
         time.sleep(1)
 
     def photo_2(self):
         self.driver.find_elements(By.XPATH, '//*[@id="id_photo2"]')[0].send_keys(
-            'C:\\Users\\garpix\\PycharmProjects\\LiteAvto\\photo\\photo_2023-08-24_12-22-15.jpg')
+            'C:\\Users\\garpix\\PycharmProjects\\LiteAvto\\photo\\1.qdHoOLa4BTjej4c1thrrkuSaBz5WmYcu3pQHOliRDTJe.webp')
         time.sleep(1)
 
     def photo_3(self):
         self.driver.find_elements(By.XPATH, '//*[@id="id_photo3"]')[0].send_keys(
-            'C:\\Users\\garpix\\PycharmProjects\\LiteAvto\\photo\\photo_2023-08-24_12-22-19.jpg')
+            'C:\\Users\\garpix\\PycharmProjects\\LiteAvto\\photo\\1.TEyKera44KW8zWKonhNlDobY4qM022KzvNbipzrT6K88.webp')
         time.sleep(1)
 
         # Описание

@@ -10,7 +10,7 @@ class TestProfileFeature(BaseTest):             # сам тест
     # @allure.severity("Critical")                # для алюра
 
     @pytest.mark.registration                          # для пайтеста обозначения (маркер)
-    def test_change_profile_name(self):         # методы :
+    def test_registration(self):         # методы :
         self.dashboard_registration_page.open()
         self.dashboard_registration_page.is_opened()         # проверка открытия страницы
         self.dashboard_registration_page.click_registration()    # нажатие кнопки
